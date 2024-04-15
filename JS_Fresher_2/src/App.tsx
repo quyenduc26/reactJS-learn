@@ -5,98 +5,106 @@ import './App.css'
 
 function App() {
 
-//  WOKR WITH ARRAY
-// let myArr: Array<number> = [1,2,3,4,5]
-// myArr.push(6)
-
-// myArr.map(item => item+1)
-
-// let newArr = myArr.splice(2,1);
-
-// myArr.filter( item => item > 1)
 
 
 // EXERCISE 1
-// function  transformToObject( listOfNumber: Array<number>){
-//   let result = [];
-//   for( let number of listOfNumber){
-//     result.push( {value : number});
-//   }
-//   return result;
+
+// type product = {
+//   name: string,
+//   price: number,
+//   quantity: number
 // }
+ 
+// let shoppingCart : Array< product> = [
+//   { name: "Apples", price: 2.5, quantity: 3 },
+//   { name: "Bananas", price: 1.5, quantity: 2 },
+//   { name: "Oranges", price: 3, quantity: 1 },
+// ];
+
+// function calculateTotalPrice( cart: Array< product>){
+//   let totalPrice = cart.reduce( (total, cur) => total + cur.price * cur.quantity ,0)
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice(shoppingCart))
+
+
+
 
 
 
 //EXERCISE 2
-// let studentList = [
-//   { firstName: 'John', lastName: 'Doe', age: 20 },
-//   { firstName: 'Alice', lastName: 'Smith', age: 22 },
-//   { firstName: 'Bob', lastName: 'Johnson', age: 21 }
-// ];
+// let originalArray: Array<number> = [1, 2, 3, 4, 5];
 
-//  function updateStudentAge( firstName: string, lastName: string, newAge: number){
-//   let student = studentList.find( student => student.firstName == firstName && student.lastName == lastName );
-//   if(student){ student.age = newAge}
-//   else{ return 'Not found student'}
-//   return student;
-//  }
+// function updateArray(array : Array<number> , index: number, newValue: number) {
+//   let newArray = [...array];
+//   newArray[index] = newValue;
+//   return newArray;
 
+// }
+
+// let updatedArray = updateArray(originalArray, 2, 10);
+
+// console.log("Original array:", originalArray);
+// console.log("Updated array:", updatedArray);
 
 
 
 // EXERCISE 3
-  // type product = {
-  //   id: number, 
-  //   name: string, 
-  //   price: number
-  // }
 
-  // type cartItem = {
-  //   id: number, 
-  //   quantity: number
-  // }
-
-  // let products: Array<product> = [
-  //   { id: 1, name: "Apple", price: 2.5 },
-  //   { id: 2, name: "Banana", price: 1.5 },
-  //   { id: 3, name: "Orange", price: 3 },
-  //   { id: 4, name: "Rice", price: 1.5 },
-  //   { id: 5, name: "Chocolate", price: 3 },
-  // ];
-
-  // let shopping_cart: Array<cartItem> = [
-  //   { id: 1, quantity: 2 },
-  //   { id: 3, quantity: 1 },
-  // ];
+// function findAverage(numbers: Array<number>) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//       sum += numbers[i];
+//   }
+//   return sum / numbers.length;
+// }
+// console.log(findAverage([1, 23, 4, 3, 6])); 
 
 
-  // function getCardTotalAmount( products: Array<product>, shoppingCart: Array<cartItem>){
-  //   let amount = shoppingCart.reduce( ( total, cur) => {
-  //     let product = products.find( item => item.id == cur.id);
-  //     if(product){
-  //       return total + product.price * cur.quantity;
-  //     }
-  //     return total;
-  //   },0)
-  // }
- 
-//   function removeCartTotalAmount(id: number): Array<cartItem> {
-//     let product = shopping_cart.find(item => item.id === id);
-//     if (product) {
-//       if(product.quantity > 1)
-//         product.quantity--;
-//       else{
-//         shopping_cart.splice(shopping_cart.indexOf(product),1)
-//       }
-//       return shopping_cart;
-//     } else {
-//       return shopping_cart;
-//     }
+// EXERCISE 4
+
+// let numbers = [1,2,5,7,3,6]
+// function filterEvenNumbers( arr:Array<number> ){
+//   return arr.filter( number => number % 2 == 0);
+// }
+// function squareNumbers( arr:Array<number> ){
+//   return arr.map( number => number*number);
+// }
+// function sumArray( arr:Array<number> ){
+//   return arr.reduce( (total, cur) => total + cur, 0);
 // }
 
-// console.log(removeCartTotalAmount(1))
-  
+// console.log(filterEvenNumbers(numbers));
+// console.log(squareNumbers(numbers));
+// console.log(sumArray(numbers));
 
+
+// EXERCISE 5
+
+type student = {
+  id: number,
+  name: string,
+  grade: string
+}
+
+let students: Array<student> = [
+  { id: 1, name: "Trang", grade: "A" },
+  { id: 2, name: "Hai", grade: "B" },
+  { id: 3, name: "Linh", grade: "C" },
+];
+
+function updateStudentGrade(studentsArray: Array<student>, idToUpdate: number, newGrade: string) { 
+  let studentIndex = studentsArray.findIndex( student => student.id == idToUpdate );
+  if(studentIndex){
+    let updatedStudent = {...studentsArray[studentIndex], grade: newGrade}
+    studentsArray[studentIndex] = updatedStudent
+  }else{
+    return 'Student not found'
+  }
+  return studentsArray;
+}
+console.log(updateStudentGrade(students, 3, 'A+'))
 
 
   return (
