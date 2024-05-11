@@ -1,0 +1,9 @@
+Q1: 
+       Feature      |	                             HTML                              |                                JSX
+Tag Syntax	        | Tags are written with angle brackets (< >)                       | Tags are enclosed within curly braces ({ })
+Attribute Syntax    | Attributes are written using double quotes (class="container")   | Attributes are written using camelCase and curly braces (className="container")
+Class and Style	    | Class attribute is written as class                              | Class attribute is written as className
+Style attribute     | Written as style="property: value;"                              | Style attribute accepts an object (style={{ property: 'value' }})
+Self-Closing Tags   | Some tags are self-closing (<img>, <br>)                         | Self-closing tags must be explicitly closed with a slash (<img />, <br />)
+Embedding JavaScript| Cannot embed JavaScript directly                                 | Embed JavaScript expressions within curly braces
+Event Handling      | Event attributes written as onclick, onchange                    | Event attributes written in camelCase (onClick, onChange)
