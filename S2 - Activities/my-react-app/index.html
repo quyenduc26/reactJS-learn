@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <style>
+      /* 1. Use a CSS variable for the primary color */
+      :root {
+        --primary-color: #007bff;
+      }
+    
+      /* 2. Style the MainGoal component */
+      .main-goal {
+        /* 3. Use the primary color as the text color */
+        color: var(--primary-color);
+        /* 4. Add padding for better readability */
+        padding: 1rem;
+        /* 5. Center the text */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
